@@ -16,18 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
   let UbdataDelete = document.getElementById("UbdataDelete");
   let ReadData = document.getElementById("ReadData");
   let FullMode = document.getElementById("FullMode");
-
-  //   let deletebtn = document.getElementById("delete");
-  //   let ubdatebtn = document.getElementById("ubdate");
-
+  
   let deleteAllRecords = document.getElementById("deleteAllRecords");
   let inputBox = document.getElementById("inputBox");
   let searchBox = document.getElementById("searchBox");
   let table = document.getElementById("table");
   AddData.addEventListener("click", function () {
     searchBox.style.display = "none";
-    // deletebtn.style.display = "none";
-    // ubdatebtn.style.display = "none";
     deleteAllRecords.style.display = "none";
     table.style.display = "block";
     inputBox.style.display = "block";
@@ -37,8 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   SearchData.addEventListener("click", function () {
     searchBox.style.display = "block";
-    // deletebtn.style.display = "none";
-    // ubdatebtn.style.display = "none";
     deleteAllRecords.style.display = "none";
     table.style.display = "block";
     inputBox.style.display = "none";
@@ -46,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ReadData.addEventListener("click", function () {
     searchBox.style.display = "none";
-    // deletebtn.style.display = "none";
-    // ubdatebtn.style.display = "none";
     deleteAllRecords.style.display = "none";
     table.style.display = "block";
     inputBox.style.display = "none";
@@ -55,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   FullMode.addEventListener("click", function () {
     searchBox.style.display = "block";
-    // deletebtn.style.display = "block";
-    // ubdatebtn.style.display = "block";
     deleteAllRecords.style.display = "block";
     table.style.display = "block";
     inputBox.style.display = "block";
@@ -92,15 +81,12 @@ let count = document.getElementById("count");
 let category = document.getElementById("category");
 let create = document.getElementById("create");
 
-let mood = "create"; //بستعمله عشان اميز بين وضع الانشاء ووضع التعدييل وافتراضيا لما اعمل ريلود بكون انشاء واذا كبست على ابديت بكون ابديت
+let mood = "create"; 
 
 let searchMood = "title";
 
-let temp; //بستعمله عشان اخزن قيمة الاندكس الي بوصل الفنكشن ابديت لما اكبس على ابديت لعنصر معين وبسمحلي اوصل للاندكس بالفنكشن تاعت اون كليك عشان داخله اعدل على الاوبجكت الي بالاندكس هاض وارجع كلشي زي مكان
+let temp; 
 function geTotal() {
-  //الفنكشن هاي بتشتغل اذا كتبت داخل اي واحد من تاعوت السعر بس في واحد منهن اجباري
-  // اكتبه وهو السعر فانا عملت شرط للفنكشن عشان تشتغل انه يكون البرايس مش فاضي واذا فاضي يخلي اللون
-  //  زي مهو واذا اشتغل وكان مش فاضي بصير اخضر
   if (price.value != "") {
     price.style.border = "solid 1px rgba(255, 255, 255, 0.355)";
     total.innerHTML = +price.value + +tax.value + +ads.value - +discount.value;
@@ -111,36 +97,22 @@ function geTotal() {
   }
 }
 
-// let products = [];//اذا عملتها هيك فكل مرا بعمل ريلود للصفحة رح يخلي المصفوفة فاضية ويضيف فيها العنصر الي انا بضيفه اخر اشي تحت ورح يروح على اللوكال ستوراج يعمل اوفر رايد فوق المصفوفة القديمة وهيك
-// رح تنحذف كل العناصر الموجودة عندي باللوكال ستوراج ويضل عندي بس الاوبجكت الي انا ضفته اخر اشي بعد ما المصفوفة صارت فاضية
-
-//الحل كالتي :::::
-/*
-                الحل يكمن في اني  انشء المتغير وبعدها افحص اللوكال ستوراج اذا اذا الكيي فيها لا يساوي نل يعني فيه بيانات فانا بخلي المتغير يؤشر على المصفوفة 
-                الي مخزن باللوكال ستوراج واذا كان فاضي وفش مصفوفة عند الكيي يعني فاضي فش عناصر ويساوي نل فهو بنشء مصفوفة جديدة
-
-                */
 let dataproducts;
 if (localStorage.product != null) {
-  dataproducts = JSON.parse(localStorage.product); //لانه بتتخزن كسترينج ولازم احولها لمصفوفة عشان اقدر اضيف عليها
-  //   هاي المرحلة بوصلها لما يكون في عندي عناصر اصلا وضايف عالاقل عنصر واحد بالمصفوفة
+  dataproducts = JSON.parse(localStorage.product);
+
 } else {
   dataproducts = [];
 }
 
 create.onclick = () => {
-  /*
-                    لما اضغط على الزر فهو رح ينشئ اوبجكت بالبيانات الي اجتني ويخزن الاوبجكت هاد بمصفوفة عشان 
-                    اصير اقدر اوصل للعناصر من خلال المصفوفة واعمل لوب عليهن واجيبهن بالترتيب والحكي هاض 
-                    يعني رح يكون عندي مصفوفة تحتوي على اوبجكتس وكل اوبجكت بمثل برودكت انا بضيفو
-                    */
   let obj = {
     title: title.value.toLowerCase(),
     price: price.value,
     tax: tax.value,
     ads: ads.value,
     discount: discount.value,
-    total: total.innerHTML, //لانها مش انبت
+    total: total.innerHTML, 
     count: count.value,
     category: category.value.toLowerCase(),
   };
@@ -149,10 +121,10 @@ create.onclick = () => {
       dataproducts.push(obj);
     } else {
       //if its ubdate
-      dataproducts[temp] = obj; //الاوبجكت هاد بحتوي على القيم الي بالانبوت والي عدلتهن بعد ما ضغطت على تعديل لعنصر معين
+      dataproducts[temp] = obj; 
       create.innerHTML = "create";
       mood = "create";
-      //   count.style.display = "block";
+     
       create.style.backgroundImage =
         "linear-gradient(to right, rgb(28, 27, 27), blueviolet)";
       document.getElementsByTagName("input")[0].style.border =
@@ -168,9 +140,9 @@ create.onclick = () => {
   }
 
   localStorage.setItem("product", JSON.stringify(dataproducts));
-  readDataToOutPut(); //انا بحكيله هون انو كل ما اضيف عنصر على الاراي اجي انادي الفنكشن الي بتطبع الاراي بالتيبل وبرضو الفنكشن لما اعمل ريلود للصفحة بتشتغل لحالها عشان ما اضطر انشئ ريكورد عشان تعرضهن
+  readDataToOutPut(); 
   clearFeilds();
-  geTotal(); //اذا كانت ابديت عدلي العنصر ونادي الجيت توتال عشان ترجعها للونها الاصلي وشكلها الاصلية وما تضل لونها اخضر لانه الفنكشن هاي بتفحص اذا البرايس فاضيي بتخلي اللون زي مهو وطبعا رح يكون فاضي لانه بعد ما
+  geTotal();
 };
 
 function clearFeilds() {
@@ -185,8 +157,7 @@ function clearFeilds() {
 }
 
 function readDataToOutPut() {
-  let table = ""; //بخزن داخله كل الريكوردس باللوب وبعدها بضيفه بالتي بودي
-  //وبجيب الريكورس مباشرة من الاراي لانها هي تلقائيا تحتوي عكل البيانات الي الي عندي
+  let table = ""; 
   for (let i = 0; i < dataproducts.length; i++) {
     table += `
                     <tr>
@@ -210,16 +181,10 @@ function readDataToOutPut() {
     deleteAllRecords.innerHTML = `<button onclick='removeRecords()' > حذف جميع البيانات(${dataproducts.length})</button>`;
   } else {
     deleteAllRecords.innerHTML = "";
-  } //هاد الكود حطيتو هون داخل هاي الفنكشن لانه هاي الفنكشن بتشتغل كل ما اعمل انشاء لريكورد وكل ما احذف ريكورد وكل ما اعمل ابديت وكل ما اعمل ريلود للصفحة
-  //   لهيك حطيتو هون عشان كل ما اعمل اي عملية بالموقع سواء حذف او اضافة يقرا الكود هاد عشان بعرف وينتا يظهر البتن ووينتا يخفيه
+  }
+ 
 }
 
- 
-// if (dataproducts.length > 0) {
-//   deleteAllRecords.innerHTML = `<button onclick='removeRecords()' >delete All records</button>`;
-// } else {
-//   deleteAllRecords.innerHTML = "";
-// } لو خليته هون فهو رح يناديه ويشغله كل ما اعمل ريلود للصفحة فلو كانت الاراي فاضية ما رح يظهر ولو بعدها ضفت عناصر لازم اعمل ريلود عشان يقرا الكود مرا ثانية
 readDataToOutPut();
 
 function deleteRecord(index) {
@@ -229,22 +194,18 @@ function deleteRecord(index) {
     dataproducts.splice(index, 1);
     localStorage.setItem("product", JSON.stringify(dataproducts));
   }
-  readDataToOutPut(); //نفس مبدا العرض عند الاضافة هون ،, انا بحذف عنصر وبعد ما احذفه مباشرة روح ناديلي الفنكشن الي بتعرض  عشان يطبعلي التيبل مباشرة بعد التعديل
+  readDataToOutPut(); 
 }
-
-//بعد ما احذف عنصر او اضيف عنصر بطبع النسخة المحدثة من الاراي
 
 function removeRecords() {
   localStorage.clear();
   dataproducts.splice(0);
-  readDataToOutPut(); //عشان يفضيها بعد ما يمسح كلشي
-  //وبرضو عشان يخفي الزر تاع الديليت كل الريكوردس
-  //  وبرضو عشان بعد ما يمسح كلشي يرد يطبعها فاضية ويرجع يفحص الشرط كمان مرا عشان يعرف اذا يظهر الزر
+  readDataToOutPut(); 
+  
 }
 function udateRecord(i) {
   temp = i;
   create.innerHTML = "تعديل العنصر";
-  //   count.style.display = "none";
   title.value = dataproducts[i].title;
   price.value = dataproducts[i].price;
   tax.value = dataproducts[i].tax;
@@ -260,7 +221,7 @@ function udateRecord(i) {
     "linear-gradient(to right, rgb(28, 27, 27), green)";
   document.getElementsByTagName("input")[0].style.border = "solid 3px green";
   mood = "ubdate";
-  geTotal(); //لانه الفنكشن هاي عاملها تشتغل اون كيي اب داخل الانبوت بس انا هون جبت البيانات مباشرة داخل الانبوت فهي ما رح تشتغل لهيك بناديها هون عشان تشتغل
+  geTotal(); 
 }
 
 function OptainSearchMood(id) {
@@ -356,26 +317,3 @@ themeDark.addEventListener("click", function () {
   openbtn.style.color = "white";
   document.getElementById("header").style.color = "white";
 });
-
-// let ThemeMood = "dark";
-// let theme = document.getElementById("theme");
-// theme.addEventListener("click", function () {
-//   if (ThemeMood == "dark") {
-//     ThemeMood = "light";
-//     theme.innerHTML = "dark mood";
-//   } else {
-//     ThemeMood = "dark";
-//     theme.innerHTML = "light mood";
-//   }
-//   if (ThemeMood == "light") {
-//     document.body.style.backgroundColor = "white";
-//     list.style.backgroundColor = "rgba(17, 15, 15,0.600)";
-//     theme.style.backgroundColor='#2e2c2b';
-//     theme.style.color='white';
-//   } else {
-//     document.body.style.backgroundColor = "rgb(17, 15, 15)";
-//     list.style.backgroundColor = "rgba(224, 6, 248, 0.116)";
-//     theme.style.backgroundColor='white';
-//     theme.style.color='black';
-//   }
-// });
