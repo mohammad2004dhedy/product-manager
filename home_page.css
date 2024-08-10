@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+body {
+  background-image: linear-gradient(to right, black, rgb(88, 83, 83));
+}
+header {
+  font-size: 1.8em;
+  padding: 5px 50px;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  background-color: #222;
+  z-index: 1000;
+  width: 100%;
+}
+header h1 {
+  border-bottom: solid rgba(245, 245, 245, 0.544) 2px;
+  padding-bottom: 5px;
+  text-align: center;
+  width: 50%;
+}
+
+.main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(images/image.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.main h2 {
+  color: white;
+  font-size: 4em;
+  text-align: center;
+}
+.main a {
+  color: white;
+  padding: 10px;
+  margin: 20px;
+  text-decoration: none;
+  border: solid white 2px;
+  background-color: transparent;
+  font-size: 1.8em;
+  transition: 400ms ease;
+  border-radius: 20px;
+}
+.main a:hover {
+  background-color: whitesmoke;
+  color: blueviolet;
+}
+#propertys {
+  background-color: #222; /* لون الخلفية */
+}
+.title {
+  text-align: center;
+  color: wheat;
+  font-size: 3em;
+  margin-top: 30px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 80px 0;
+}
+.illustration {
+  width: 300px; /* عرض الصورة */
+  height: auto;
+  margin-right: 20px;
+  border-radius: 20px;
+  /* mix-blend-mode: multiply; */
+}
+
+.text {
+  width: 40%;
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center; /* محاذاة النص لليمين */
+}
+
+.property {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+}
+.visit {
+  width: 100%;
+  background-image: url(images/visitSection_BackGround.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.visit h1 {
+  font-size: 5.6em;
+  letter-spacing: 10px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.738), 0 0 40px blueviolet;
+  margin-bottom: 50px;
+}
+.btn {
+  width: 25%;
+  height: 70px;
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below 10px
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+
+.btn:active {
+  scale: 0.92;
+}
+
+.btn:hover {
+  background: rgb(2, 29, 78);
+  background: linear-gradient(
+    270deg,
+    rgba(2, 29, 78, 0.681) 0%,
+    rgba(31, 215, 232, 0.873) 60%
+  );
+  color: rgb(4, 4, 38);
+  font-size: 1.4em;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.875);
+  height: 5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: relative;
+}
+footer .social {
+  margin: 10px 30px;
+}
+footer .social a {
+  color: whitesmoke;
+  font-size: 1.8em;
+  margin: 0 20px;
+  transition: 300ms ease;
+}
+footer h3 {
+  color: white;
+}
+footer .social a:hover{
+    filter: drop-shadow(0 0 15px blueviolet);
+}

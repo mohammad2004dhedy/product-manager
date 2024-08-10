@@ -1,0 +1,227 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: rgb(17, 15, 15);
+  width: 100%;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 60px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.title {
+  color: white;
+  font-size: 2em;
+}
+.hide {
+  display: none;
+}
+.list {
+  height: 100vh;
+  background-color: rgba(224, 6, 248, 0.116);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 30px rgba(227, 228, 237, 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  position: fixed;
+  right: 5px;
+  top: 30xp;
+  padding: 20px;
+  width: 300px;
+}
+.close {
+  color: white;
+  font-size: 1.8em;
+}
+.Openicon {
+  color: whitesmoke;
+  font-size: 1.8em;
+}
+.list .profile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  color: whitesmoke;
+  /* font-size: 1.2em; */
+}
+.profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.links {
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50vh;
+}
+.links a {
+  color: white;
+  font-size: 1.3em;
+  text-decoration: none;
+  transition: 500ms ease;
+  padding: 10px;
+}
+.links a:hover {
+  background-color: #fff;
+  color: blueviolet;
+  border-radius: 30px;
+}
+#themeLight {
+  padding: 5px;
+  background-color: white;
+  border: solid blue 3px;
+  color: #a200ff;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+#themeDark {
+  padding: 5px;
+  background-color: #686868;
+  color: #000000;
+  border: solid black 3px;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.crud {
+  width: 80%;
+  margin: auto;
+}
+.header {
+  color: white;
+  text-align: center;
+  margin: 10px;
+  width: 100%;
+  border-bottom: solid 2px gray;
+  padding: 10px 0;
+}
+.header h1 {
+  text-transform: capitalize;
+  font-size: 2em;
+  margin: 5px;
+}
+nav {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  gap: 10px;
+  padding: 5px;
+}
+nav p {
+  background-image: linear-gradient(to right, rgb(48, 47, 47), blueviolet);
+  width: 18%;
+  padding: 5px;
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+  border-radius: 10px;
+  transition: 300ms ease;
+}
+nav p:hover {
+  background-image: linear-gradient(to right, rgb(0, 174, 255), blueviolet);
+  box-shadow: 0 0 5px white;
+}
+
+input {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background-color: #4f4d4c;
+  border-radius: 8px;
+  margin: 10px 2px;
+  color: white;
+  border: solid 1px rgba(191, 42, 255, 0.355);
+  transition: 300ms linear;
+}
+input:focus {
+  transform: scale(1.02);
+  border: solid 1px rgb(7, 168, 28);
+}
+::placeholder {
+  color: #ffffff99;
+}
+.price input {
+  width: 22%;
+}
+#total {
+  color: white;
+  background-color: blueviolet;
+  padding: 5px;
+  border-radius: 5px;
+}
+#total::before {
+  content: "اجمالي السعر: ";
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  background-color: rgba(137, 43, 226, 0.722);
+  border: solid 1px rgba(255, 255, 255, 0.599) smoke;
+  border-radius: 10px;
+  transition: 400ms ease;
+  cursor: pointer;
+}
+button:hover {
+  border: solid 2px rgba(255, 255, 255, 0.432);
+  background-image: linear-gradient(to right, rgb(85, 82, 82), blueviolet);
+  letter-spacing: 1px;
+}
+#create {
+  font-size: 1.4em;
+}
+.searchbtn button {
+  width: 45%;
+}
+.searchbtn {
+  display: flex;
+  justify-content: space-between;
+}
+table {
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin: 20px 0;
+  padding: 10px 0;
+  margin: auto;
+}
+
+table button {
+  padding: 5px;
+  border-radius: 20px;
+}
+#tbody {
+  width: 100%;
+}
+th {
+  text-transform: uppercase;
+  background-color: rgb(82, 4, 251);
+}
+th,
+td {
+  padding: 5px;
+}
+td {
+  background-color: slateblue;
+}
+.tableheader {
+  padding-bottom: 5px;
+  border-bottom: solid 2px white;
+}
+#deleteAllRecords {
+  margin: 20px 0 10px 0;
+}

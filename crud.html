@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>manager</title>
+    <link rel="stylesheet" href="crud.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <h1 class="title" id="Pagetitle">manaSys</h1>
+      <div class="Openicon" id="openbtn">
+        <i class="fa-solid fa-list"></i>
+      </div>
+
+      <div class="list hide" id="list">
+        <div class="close" id="closebtn">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+
+        <div class="profile">
+          <img
+            src="images/blank-profile-picture-973460_640.png"
+            alt=""
+            id="profileImage"
+          />
+          <h3 id="profileName">Manasys User</h3>
+        </div>
+        <div class="links">
+          <a
+            href="C:/Users/mhmdd/Desktop/advanced_css/first_full_project/home_page.html"
+            >الصفحة الرئيسية</a
+          >
+          <a href="contact.html">احصل على مساعدة</a>
+
+          <a href="#" id="logOut">تسجيل الخروج</a>
+          <a href="#" id="logIn">تسجيل الدخول</a>
+          <a
+            href="C:\Users\mhmdd\Desktop\advanced_css\portfolio.html"
+            target="_blank"
+            >معلومات عن المطور</a
+          >
+        </div>
+
+        <p type="button" id="themeLight">وضع النور</p>
+        <p type="button" id="themeDark">وضع الظلام</p>
+      </div>
+      <!--list-->
+    </div>
+    <!--navbar-->
+    <div class="crud" id="crud">
+      <div class="header" id="header">
+        <h1>مدير المخزون</h1>
+        <p>ادخال , تعديل ,حذف وقراءة بيانات مخزنك</p>
+      </div>
+      <!--header-->
+      <nav>
+        <p id="AddData">اضافة بيانات</p>
+        <p id="SearchData">البحث في البيانات</p>
+        <p id="ReadData">عرض البيانات</p>
+        <p id="FullMode">الوضع الكامل</p>
+      </nav>
+      <div class="input" id="inputBox">
+        <input type="text" id="title" placeholder="product title" />
+
+        <div class="price">
+          <input
+            type="number"
+            onkeyup="geTotal()"
+            id="price"
+            placeholder="price (mandatory!)"
+          />
+          <input type="number" onkeyup="geTotal()" id="tax" placeholder="tax" />
+          <input type="number" onkeyup="geTotal()" id="ads" placeholder="ads" />
+          <input
+            type="number"
+            onkeyup="geTotal()"
+            id="discount"
+            placeholder="discount"
+          />
+
+          <p id="total"><i class="fa-solid fa-shekel-sign"></i></p>
+        </div>
+
+        <input type="number" id="count" placeholder="quantity" />
+        <input type="text" id="category" placeholder="category" />
+        <button id="create">انشاء</button>
+      </div>
+      <!--input-->
+
+      <div class="output">
+        <div class="search" id="searchBox">
+          <input
+            type="text"
+            onkeyup="searchData(value)"
+            id="search"
+            placeholder="Search product"
+          />
+          <div class="searchbtn">
+            <button onclick="OptainSearchMood(this.id)" id="searchTitle">
+              البحث من خلال الاسم
+            </button>
+            <button onclick="OptainSearchMood(this.id)" id="searchCategory">
+              البحث من خلال الصنف
+            </button>
+          </div>
+        </div>
+        <!--search-->
+        <div id="deleteAllRecords"></div>
+        <table id="table">
+          <tr>
+            <th>Id</th>
+            <th>title</th>
+            <th>price</th>
+            <th>tax</th>
+            <th>ads</th>
+            <th>Discount</th>
+            <th>Total</th>
+            <th>quantity</th>
+            <th>category</th>
+            <th>update</th>
+            <th>delete</th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <!--outbut-->
+    </div>
+    <!--crud-->
+    <script src="crud.js"></script>
+  </body>
+</html>
